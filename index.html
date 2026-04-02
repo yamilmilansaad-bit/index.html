@@ -3,173 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zumbrasil - El Ritmo Eléctrico</title>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <title>Zumbrasil - Zumba Oficial</title>
     <style>
-        :root {
-            --neon-green: #39FF14;
-            --neon-pink: #FF00FF;
-            --neon-blue: #00FFFF;
-            --neon-purple: #8A2BE2;
-        }
-
-        body {
-            background-color: #000;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        /* NAVEGACIÓN */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background: rgba(0,0,0,0.9);
-            border-bottom: 2px solid var(--neon-purple);
-        }
-
-        .logo-text { font-size: 1.8rem; font-style: italic; font-weight: 900; line-height: 1; }
-        .logo-text .green { color: var(--neon-green); text-shadow: 0 0 10px var(--neon-green); }
-        .logo-text .pink { color: var(--neon-pink); display: block; font-size: 1.2rem; }
-
-        nav ul { display: flex; list-style: none; gap: 20px; }
-        nav ul li a { color: var(--neon-green); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-
-        /* SECCIÓN HERO (PRINCIPAL) */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 60px 5%;
-            align-items: center;
-            min-height: 80vh;
-            background: radial-gradient(circle at top right, #1a0033, #000);
-        }
-
-        .hero-text { flex: 1; min-width: 350px; }
-        .hero-text h1 { 
-            font-size: 4rem; 
-            font-style: italic; 
-            line-height: 0.9; 
-            margin: 0;
-            text-transform: uppercase;
-        }
-        .hero-text .highlight { color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green); }
-        .hero-text p { font-size: 1.4rem; margin: 25px 0; font-weight: 400; }
-
-        .btn-box { display: flex; gap: 20px; flex-wrap: wrap; }
-        .btn-green {
-            background: var(--neon-green);
-            color: #000;
-            padding: 18px 35px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 900;
-            box-shadow: 0 0 25px var(--neon-green);
-            text-align: center;
-        }
-        .btn-purple {
-            border: 3px solid var(--neon-purple);
-            color: #fff;
-            padding: 15px 35px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 900;
-            box-shadow: 0 0 15px var(--neon-purple);
-            text-align: center;
-        }
-
-        .hero-image { flex: 1; min-width: 350px; text-align: center; }
-        .hero-image img { 
-            width: 100%; 
-            max-width: 600px; 
-            border-radius: 30px; 
-            filter: drop-shadow(0 0 30px var(--neon-purple));
-        }
-
-        /* SECCIÓN DE PRECIOS */
-        .pricing { padding: 100px 5%; text-align: center; background: #050505; border-top: 2px solid var(--neon-blue); }
-        .pricing h2 { font-size: 3.5rem; color: var(--neon-blue); margin-bottom: 50px; font-style: italic; }
+        body { background-color: #000; color: white; font-family: sans-serif; margin: 0; }
+        .hero { display: flex; flex-wrap: wrap; padding: 50px; align-items: center; justify-content: center; min-height: 80vh; }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-text h1 { font-size: 3rem; color: #39FF14; text-shadow: 0 0 20px #39FF14; font-style: italic; }
+        .btn-green { background: #39FF14; color: black; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; box-shadow: 0 0 20px #39FF14; display: inline-block; margin-right: 10px; }
+        .btn-purple { border: 3px solid #8A2BE2; color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; box-shadow: 0 0 15px #8A2BE2; display: inline-block; }
         
-        .price-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        .price-card {
-            background: #111;
-            padding: 50px 30px;
-            border-radius: 25px;
-            width: 280px;
-            border: 2px solid #333;
-        }
-        .price-card.featured { 
-            border-color: var(--neon-green); 
-            box-shadow: 0 0 30px var(--neon-green); 
-            transform: scale(1.05); 
-        }
-        .price-card h3 { font-size: 1.8rem; margin: 0; }
-        .price-card .amount { font-size: 4rem; color: var(--neon-green); margin: 20px 0; font-weight: 900; }
-        .price-card ul { list-style: none; padding: 0; margin-bottom: 30px; opacity: 0.8; line-height: 2; }
+        /* ESTA ES LA SECCIÓN DE LA IMAGEN */
+        .hero-image img { width: 100%; max-width: 600px; border-radius: 20px; filter: drop-shadow(0 0 30px #8A2BE2); }
+        
+        .pricing { padding: 50px; text-align: center; }
+        .card { background: #111; padding: 30px; border-radius: 20px; border: 2px solid #333; display: inline-block; width: 250px; margin: 10px; }
+        .card.pro { border-color: #39FF14; box-shadow: 0 0 20px #39FF14; }
     </style>
 </head>
 <body>
-
-    <nav>
-        <div class="logo-text">
-            <span class="green">ZUMBRASIL</span>
-            <span class="pink">ZUMBA</span>
-        </div>
-        <ul>
-            <li><a href="#">INICIO</a></li>
-            <li><a href="#">CLASES</a></li>
-            <li><a href="#">HORARIOS</a></li>
-            <li><a href="#">CONTACTO</a></li>
-        </ul>
-    </nav>
-
     <header class="hero">
         <div class="hero-text">
-            <h1><span class="highlight">ZUMBRASIL:</span><br>EL RITMO QUE ELECTRIFICA TU CUERPO</h1>
+            <h1>ZUMBRASIL:</h1>
+            <h2>EL RITMO QUE ELECTRIFICA TU CUERPO</h2>
             <p>Siente la energía de Brasil en cada paso.</p>
-            <div class="btn-box">
-                <a href="#" class="btn-green">¡PRUEBA UNA CLASE GRATIS!</a>
-                <a href="#" class="btn-purple">VER HORARIOS</a>
-            </div>
+            <a href="#" class="btn-green">¡PRUEBA GRATIS!</a>
+            <a href="#" class="btn-purple">HORARIOS</a>
         </div>
         <div class="hero-image">
-            <!-- HE AGREGADO LA IMAGEN DIRECTAMENTE AQUÍ -->
-            <img src="https://ibb.co" alt="Bailarines Zumbrasil">
+            <!-- HE CAMBIADO ESTE ENLACE POR UNO QUE CARGA SIEMPRE -->
+            <img src="https://unsplash.com" alt="Zumba Dancers">
         </div>
     </header>
 
     <section class="pricing">
-        <h2>TARIFAS ELÉCTRICAS</h2>
-        <div class="price-grid">
-            <div class="price-card">
-                <h3>PASE DIARIO</h3>
-                <div class="amount">$10</div>
-                <ul>
-                    <li>1 Clase de Zumba</li>
-                    <li>Acceso a Vestidores</li>
-                    <li>Agua de cortesía</li>
-                </ul>
-                <a href="#" class="btn-purple">ELEGIR</a>
-            </div>
-            
-            <div class="price-card featured">
-                <h3>PLAN PRO</h3>
-                <div class="amount">$45</div>
-                <ul>
-                    <li>Clases Ilimitadas</li>
-                    <li>Acceso a Eventos</li>
-                    <li>Plan Nutricional</li>
-                </ul>
-                <a href="#" class="btn-green">¡LO QUIERO!</a>
-            </div>
-        </div>
+        <h2 style="color: #00FFFF;">TARIFAS</h2>
+        <div class="card"><h3>DIARIO</h3><p style="font-size: 2rem;">$10</p></div>
+        <div class="card pro"><h3>MENSUAL</h3><p style="font-size: 2rem; color: #39FF14;">$45</p></div>
     </section>
-
 </body>
 </html>
+
 
 
 
