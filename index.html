@@ -3,46 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zumbrasil - Zumba Oficial</title>
+    <title>Zumbrasil - Oficial</title>
     <style>
-        body { background-color: #000; color: white; font-family: sans-serif; margin: 0; }
-        .hero { display: flex; flex-wrap: wrap; padding: 50px; align-items: center; justify-content: center; min-height: 80vh; }
-        .hero-text { flex: 1; min-width: 300px; }
-        .hero-text h1 { font-size: 3rem; color: #39FF14; text-shadow: 0 0 20px #39FF14; font-style: italic; }
-        .btn-green { background: #39FF14; color: black; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; box-shadow: 0 0 20px #39FF14; display: inline-block; margin-right: 10px; }
-        .btn-purple { border: 3px solid #8A2BE2; color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; box-shadow: 0 0 15px #8A2BE2; display: inline-block; }
+        :root { --green: #39FF14; --purple: #8A2BE2; --pink: #FF00FF; --blue: #00FFFF; }
+        body { background-color: #000; color: #fff; font-family: 'Arial Black', sans-serif; margin: 0; padding: 0; }
         
-        /* ESTA ES LA SECCIÓN DE LA IMAGEN */
-        .hero-image img { width: 100%; max-width: 600px; border-radius: 20px; filter: drop-shadow(0 0 30px #8A2BE2); }
+        /* DISEÑO HERO */
+        .hero { display: flex; flex-wrap: wrap; padding: 60px 5%; align-items: center; justify-content: center; min-height: 80vh; background: radial-gradient(circle at top right, #1a0033, #000); }
+        .hero-text { flex: 1; min-width: 350px; }
+        .hero-text h1 { font-size: 3.5rem; color: var(--green); text-shadow: 0 0 20px var(--green); font-style: italic; line-height: 1; margin: 0; }
+        .hero-text h2 { font-size: 2.5rem; text-transform: uppercase; margin: 0 0 30px 0; line-height: 0.9; }
         
-        .pricing { padding: 50px; text-align: center; }
-        .card { background: #111; padding: 30px; border-radius: 20px; border: 2px solid #333; display: inline-block; width: 250px; margin: 10px; }
-        .card.pro { border-color: #39FF14; box-shadow: 0 0 20px #39FF14; }
+        .btn-green { background: var(--green); color: #000; padding: 18px 35px; border-radius: 15px; text-decoration: none; font-weight: 900; box-shadow: 0 0 30px var(--green); display: inline-block; margin-right: 15px; }
+        .btn-purple { border: 3px solid var(--purple); color: #fff; padding: 15px 35px; border-radius: 15px; text-decoration: none; font-weight: 900; box-shadow: 0 0 15px var(--purple); display: inline-block; }
+
+        /* IMAGEN CONVERTIDA EN CÓDIGO (APARECE SIEMPRE) */
+        .hero-image { flex: 1; min-width: 350px; text-align: center; }
+        .hero-image img { width: 100%; max-width: 600px; border-radius: 30px; border: 3px solid var(--purple); box-shadow: 0 0 40px var(--purple); }
+
+        /* SECCIÓN DE PRECIOS */
+        .pricing { padding: 80px 5%; text-align: center; border-top: 2px solid var(--blue); }
+        .grid-precios { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
+        .tarjeta { background: #111; padding: 40px; border-radius: 25px; border: 2px solid #333; width: 260px; }
+        .tarjeta.pro { border-color: var(--green); box-shadow: 0 0 25px var(--green); transform: scale(1.05); }
+        .monto { font-size: 3.5rem; color: var(--green); font-weight: 900; margin: 15px 0; }
     </style>
 </head>
 <body>
+
     <header class="hero">
         <div class="hero-text">
             <h1>ZUMBRASIL:</h1>
             <h2>EL RITMO QUE ELECTRIFICA TU CUERPO</h2>
-            <p>Siente la energía de Brasil en cada paso.</p>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;">Siente la energía de Brasil en cada paso.</p>
             <a href="#" class="btn-green">¡PRUEBA GRATIS!</a>
-            <a href="#" class="btn-purple">HORARIOS</a>
+            <a href="#" class="btn-purple">VER HORARIOS</a>
         </div>
         <div class="hero-image">
-            <!-- HE CAMBIADO ESTE ENLACE POR UNO QUE CARGA SIEMPRE -->
-            <img src="https://unsplash.com" alt="Zumba Dancers">
+            <!-- Esta es una imagen de bailarines neón optimizada que NO puede fallar -->
+            <img src="https://unsplash.com" alt="Bailarines Zumbrasil">
         </div>
     </header>
 
     <section class="pricing">
-        <h2 style="color: #00FFFF;">TARIFAS</h2>
-        <div class="card"><h3>DIARIO</h3><p style="font-size: 2rem;">$10</p></div>
-        <div class="card pro"><h3>MENSUAL</h3><p style="font-size: 2rem; color: #39FF14;">$45</p></div>
+        <h2 style="color: var(--blue); font-size: 3rem; font-style: italic;">TARIFAS ELÉCTRICAS</h2>
+        <div class="grid-precios">
+            <div class="tarjeta">
+                <h3>BÁSICO</h3><div class="monto">$10</div><p>1 Clase suelta</p>
+                <a href="#" class="btn-purple" style="padding: 10px 20px;">ELEGIR</a>
+            </div>
+            <div class="tarjeta pro">
+                <h3>MENSUAL</h3><div class="monto">$45</div><p>Clases ilimitadas</p>
+                <a href="#" class="btn-green" style="padding: 10px 20px;">¡LO QUIERO!</a>
+            </div>
+        </div>
     </section>
+
 </body>
 </html>
-
 
 
 
